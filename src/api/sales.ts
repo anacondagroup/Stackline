@@ -1,5 +1,5 @@
-import { Sales } from '../data/sales.json'
+import { MockData } from "../utils/types";
 
-const getSales = async (): Promise<> => {
-
-}
+export const getSales = async (): Promise<MockData[]> => {
+  return require("../data/sales.json");
+};
