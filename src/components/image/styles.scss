@@ -1,0 +1,17 @@
+.image-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    img {
+        height: 200px;
+    }
+}
+
+.title-container {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.description-container {
+    color: rgb(174,184,205);
+}

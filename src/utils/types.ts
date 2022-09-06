@@ -1,5 +1,5 @@
 export interface Sale {
-  weekEnding: Date;
+  weekEnding: string;
   retailSales: number;
   wholesaleSales: number;
   unitsSold: number;

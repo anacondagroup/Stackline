@@ -1,0 +1,9 @@
+.dashboard {
+    background-color: rgb(246, 248, 250);
+    display: flex;
+    flex-direction: column;
+    .main-container {
+        display: flex;
+        flex: 1;
+    }
+}

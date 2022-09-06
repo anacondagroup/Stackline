@@ -3,11 +3,24 @@ import { MockData } from "../utils/types";
 import { getSales } from "../api/sales";
 
 interface MockState {
-  sales: MockData[];
+  data: MockData[];
 }
 
 const initialState: MockState = {
-  sales: [],
+  data: [
+    {
+      id: "",
+      title: "",
+      image: "",
+      subtitle: "",
+      brand: "",
+      reviews: [],
+      retailer: "",
+      details: [],
+      tags: [],
+      sales: [],
+    },
+  ],
 };
 
 export const salesSlice = createSlice({
@@ -15,7 +28,8 @@ export const salesSlice = createSlice({
   initialState,
   reducers: {
     fetch: (state, action: PayloadAction<MockData[]>) => {
-      state.sales = action.payload;
+      console.log("reducers");
+      state.data = action.payload;
     },
   },
 });
