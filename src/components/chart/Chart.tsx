@@ -1,7 +1,7 @@
 import React from "react";
 import { Sale } from "../../utils/types";
 import { convertChartData } from "../../utils/convertChartData";
-import { LineChart, Line, XAxis, ResponsiveContainer, YAxis } from "recharts";
+import { LineChart, Line, XAxis, ResponsiveContainer } from "recharts";
 import "./styles.scss";
 
 export interface SaleData {

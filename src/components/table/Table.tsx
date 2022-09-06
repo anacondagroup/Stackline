@@ -1,46 +1,51 @@
 import React from "react";
 import { SaleData } from "../chart/Chart";
 import "./styles.scss";
-import {
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  TableContainer,
-} from "@chakra-ui/react";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable } from "./DataTable";
+import { Sale } from "../../utils/types";
+
+const columnHelper = createColumnHelper<Sale>();
+
+const columns = [
+  columnHelper.accessor("weekEnding", {
+    cell: (info) => info.getValue(),
+    header: "WEEK ENDING",
+  }),
+  columnHelper.accessor("retailSales", {
+    cell: (info) => info.getValue(),
+    header: "RETAIL SALES",
+    meta: {
+      isNumeric: true,
+    },
+  }),
+  columnHelper.accessor("wholesaleSales", {
+    cell: (info) => info.getValue(),
+    header: "WHOLESALE SALES",
+    meta: {
+      isNumeric: true,
+    },
+  }),
+  columnHelper.accessor("unitsSold", {
+    cell: (info) => info.getValue(),
+    header: "UNITS SOLD",
+    meta: {
+      isNumeric: true,
+    },
+  }),
+  columnHelper.accessor("retailerMargin", {
+    cell: (info) => info.getValue(),
+    header: "RETAILER MARGIN",
+    meta: {
+      isNumeric: true,
+    },
+  }),
+];
 
 export const SaleTable = ({ data }: SaleData) => {
   return (
     <div className="table-container">
-      <TableContainer>
-        <Table variant="simple">
-          <TableCaption>Imperial to metric conversion factors</TableCaption>
-          <Thead>
-            <Tr>
-              <Th>Week Ending</Th>
-              <Th isNumeric>Retail Sales</Th>
-              <Th isNumeric>WholeSale Sales</Th>
-              <Th isNumeric>Units Sold</Th>
-              <Th isNumeric>Retailer Margin</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {data.map((sale, index) => (
-              <Tr key={index}>
-                <Td>{sale.weekEnding}</Td>
-                <Td isNumeric>{sale.retailSales}</Td>
-                <Td isNumeric>{sale.wholesaleSales}</Td>
-                <Td isNumeric>{sale.unitsSold}</Td>
-                <Td isNumeric>${sale.retailerMargin}</Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
-      </TableContainer>
+      <DataTable columns={columns} data={data} />
     </div>
   );
 };

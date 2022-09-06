@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { MockData } from "../utils/types";
-import { getSales } from "../api/sales";
 
 interface MockState {
   data: MockData[];
@@ -28,7 +27,6 @@ export const salesSlice = createSlice({
   initialState,
   reducers: {
     fetch: (state, action: PayloadAction<MockData[]>) => {
-      console.log("reducers");
       state.data = action.payload;
     },
   },

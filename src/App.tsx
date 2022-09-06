@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useFetch from "./utils/useFetch";
 import Dashboard from "./pages/dashboard";
 import "./App.css";
