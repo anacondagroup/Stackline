@@ -6,6 +6,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Implemented functions and techniques
+
+1. React and Redux using typescript.
+2. Implement Eslint and prettier to make code clean and easy to follow.
+3. Implement functional components.
+4. Make both chart and sorting table.
+5. Use Chakra UI.
+6. Use Redux tool kit.
+7. Use custom hook.
+
 ### `npm start`
 
 Runs the app in the development mode.\
